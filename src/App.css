@@ -1,0 +1,367 @@
+.cover {
+  background-image: url(https://cdn-uploads.our-wedding.link/05fa6670-935d-11eb-a905-e5c768b2e378.jpg);
+  background-size: cover;
+  background-position: 50%;
+  position: relative;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+
+  .breathing {
+    -webkit-animation: breathing 5s ease-out infinite normal;
+    animation: breathing 5s ease-out infinite normal;
+  }
+}
+
+.card {
+  width: 220px;
+  height: 140px;
+  border-radius: 10px;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 5px 5px 8px rgba(45, 45, 45, 0.2);
+  transition: .2s;
+}
+
+.card::before {
+  width: 110px;
+  height: 70px;
+  border-top: 70px solid #fff;
+  border-right: 110px solid #eee;
+  border-bottom: 70px solid #dedede;
+  border-left: 110px solid #eee;
+  border-radius: 10px;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  content: '';
+  z-index: 1000;
+}
+
+.top {
+  border-top: 70px solid #fefefe;
+  border-right: 110px solid transparent;
+  border-bottom: 70px solid transparent;
+  border-left: 110px solid transparent;
+  border-radius: 10px;
+  position: absolute;
+  content: '';
+  height: 0;
+  width: 0;
+  top: 0;
+  transform-origin: top;
+  transition: .4s;
+}
+
+.heart {
+  width: 24px;
+  height: 24px;
+  background: #D3806C;
+  transform: translate(-50%, -50%) rotate(45deg);
+  animation: heartbeat 1.4s linear infinite;
+  position: absolute;
+  z-index: 99999;
+  transition: .1s;
+}
+
+.heart::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  background: #D3806C;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  z-index: 9999999;
+}
+
+.heart::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 24px;
+  height: 24px;
+  background: #D3806C;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  z-index: 9999999;
+}
+
+
+.letter {
+  position: absolute;
+  background-color: #FCF6EA;
+  width: 180px;
+  height: 125px;
+  top: 0px;
+  left: 20px;
+  transition: .3s;
+  z-index: 10;
+  border-radius: 8px;
+  box-shadow: 0px 0px 12px rgba(45, 45, 45, 0.3);
+}
+
+.card-open {
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  animation: none !important;
+}
+
+.card-open .heart {
+  display: none !important;
+}
+
+.card-open::before {
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  border-top: 70px solid transparent !important;
+}
+
+.card-open .top {
+  transform: rotateX(160deg) !important;
+  border-top-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}
+
+.card-open .letter {
+  transform: translateY(-50px);
+  z-index: 2;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: rotate(45deg) scale(1);
+  }
+
+  25% {
+    transform: rotate(45deg) scale(1);
+  }
+
+  30% {
+    transform: rotate(45deg) scale(1.2);
+  }
+
+  50% {
+    transform: rotate(45deg) scale(1.4);
+  }
+
+  70% {
+    transform: rotate(45deg) scale(1.2);
+  }
+
+  100% {
+    transform: rotate(45deg) scale(1);
+  }
+}
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes breathing {
+  0% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  25% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  60% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  100% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+
+@keyframes breathing {
+  0% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  25% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  60% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+
+  100% {
+    -webkit-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+}
+
+.credit-card {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 7px;
+  width: 100%;
+  max-width: 340px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+  transition: all 0.4s ease;
+  min-height: 60px;
+  padding: 24px 20px;
+  background: #1a1b1c;
+  color: #fff;
+  text-align: left;
+  user-select: none;
+}
+
+.credit-card::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url('../public/peta-indo.png');
+  background-size: 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.4;
+}
+
+.credit-card.bri {
+  background-color: #0A5BA8;
+}
+
+.credit-card.britama {
+  background-color: #292526;
+}
+
+.credit-card.bca {
+  background-color: #157CB7;
+}
+
+.credit-card.dana {
+  background-color: #108DE9;
+}
+
+.credit-card.ovo {
+  background-color: #4E3394;
+}
+
+.credit-card-expiry {
+  font-family: "PT Mono", Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1em;
+  margin-top: 0px;
+}
+
+.credit-card-expiry2 {
+  font-family: "PT Mono", Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.credit-card-last4 {
+  font-family: "PT Mono", Helvetica, sans-serif;
+  font-size: 25px;
+  margin: 2px 0px;
+}
+
+.card-stack-carousel {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.card-stack {
+  position: relative;
+  height: 250px;
+  perspective: 1000px;
+  cursor: grab;
+}
+
+.credit-card.active {
+  transform: translateX(0) translateY(0) translateZ(0);
+  animation-name: slideIn;
+  margin-left: calc(100vw/22);
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+}
+
+.credit-card:not(.active) {
+  pointer-events: none;
+  /* transform: translateX(100%) translateY(0%) translateZ(-200px); */
+  /* opacity: 0.6; */
+  animation-name: slideOut;
+  /* z-index: -10; */
+  filter: blur(.1rem);
+  -webkit-filter: blur(0.1rem);
+}
+
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%) translateY(20%) translateZ(-200px);
+    opacity: 0.7;
+  }
+
+  to {
+    transform: translateX(0) translateY(0) translateZ(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0) translateY(0) translateZ(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(-100%) translateY(20%) translateZ(-200px);
+    opacity: 0.7;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  z-index: 1001;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(39, 46, 56, 0.85);
+  backdrop-filter: blur(15px);
+}
